@@ -6,8 +6,6 @@ import CardMedia from './CardMedia';
 import { useMountFetch } from '../customHooks/useMountFetch';
 
 export default ({
-  header = null,
-  description = null,
   url = '',
   proxyUrl="https://cors-anywhere.herokuapp.com",
   width = '600px',
@@ -27,12 +25,12 @@ export default ({
             loading={loading}
             loadingWidth={2}
           >
-            {header ? header : data.title ? data.title : url}
+            {data.title ? data.title : url}
           </Description>
         </Header>
         <Content>
           <Description loading={loading} loadingWidth={1}>
-            {description ? description : data.description ? data.description : url}
+            {data.description ? data.description : url}
           </Description>
         </Content>
         <Footer>
